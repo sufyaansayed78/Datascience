@@ -1,7 +1,7 @@
 from src.datascience import logger
 from src.datascience.pipeline.Data_Ingestion_pipeline import DataIngestionPipeLine
 from src.datascience.pipeline.data_validation_pipeline import DataValidationPipeline
-
+from src.datascience.pipeline.data_transformation_pipeline import DataTransformationPipeline
 
 
 try : 
@@ -17,5 +17,12 @@ try :
     data_validation_pipeline = DataValidationPipeline()
     data_validation_pipeline.initiate_data_validation()
     logger.info("Data Validation complete")
+except Exception as e :
+    raise e 
+
+try : 
+    data_transformation_pipeline = DataTransformationPipeline()
+    data_transformation_pipeline.initiate_data_transformation()
+    
 except Exception as e :
     raise e 
