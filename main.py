@@ -2,6 +2,7 @@ from src.datascience import logger
 from src.datascience.pipeline.Data_Ingestion_pipeline import DataIngestionPipeLine
 from src.datascience.pipeline.data_validation_pipeline import DataValidationPipeline
 from src.datascience.pipeline.data_transformation_pipeline import DataTransformationPipeline
+from src.datascience.pipeline.model_trainer_pipeline import ModelTrainingPipeline
 
 
 try : 
@@ -25,4 +26,11 @@ try :
     data_transformation_pipeline.initiate_data_transformation()
     
 except Exception as e :
+    raise e 
+
+try : 
+    model_trainer_pipeline = ModelTrainingPipeline()
+    model_trainer_pipeline.initiate_model_training()
+
+except Exception as e : 
     raise e 
